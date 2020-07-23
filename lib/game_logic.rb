@@ -7,7 +7,17 @@ class GameLogic
 
   def validate_move(move)
     @arrays_key = { 'a' => 0, 'b' => 1, 'c' => 2, 'd' => 3, 'e' => 4, 'f' => 5, 'g' => 6, 'h' => 7, 'i' => 8 }
-    @arrays_key.has_key?(move)? @arrays_key[move] : 'No Valid'
+    @arrays_key.key?(move) ? @arrays_key[move] : 'No Valid'
+  end
+
+  def update_board(move, symbol)
+    if @array[move] != 'X' && @array[move] != 'O'
+      @array[move] = symbol
+      true
+    else
+      puts 'Move is Invalid'
+      false
+    end
   end
 
   def welcome_message(name, symbol)

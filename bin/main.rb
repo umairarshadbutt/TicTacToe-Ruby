@@ -11,25 +11,43 @@ player1 = Players.new(gets.chomp, 'X')
 game.welcome_message(player1.name, player1.symbol)
 # puts "#{player1} your symbol is X "
 puts 'Please Enter Your Name(Second Player): '
-player2 = Players.new(gets.chomp, 'X')
+player2 = Players.new(gets.chomp, 'O')
 # save the name in player2 variable
 # after entering the name we will assign the sign to player
 game.welcome_message(player2.name, player2.symbol)
-
-
-game.game_board
-
-
-puts "It is your move #{player1.name}, Select the position"
-move = gets.chomp
-if game.validate_move(move) != "No Valid"
-    puts "seccessful"
-else
-    puts "invalid input"
+test = false
+while test == false
+  loop do
+    game.game_board
+    puts "It is your move #{player1.name}, Select the position"
+    move = gets.chomp
+    validate_move = game.validate_move(move)
+    if validate_move != 'No Valid'
+      update_game_board = game.update_board(validate_move, 'X')
+      puts 'Succesfull'
+    else
+      puts 'invalid input'
+    end
+    break if update_game_board == true
+  end
+  break if test == true
+  loop do
+    game.game_board
+    puts "It is your move #{player2.name}, Select the position"
+    move1 = gets.chomp
+    validate_move1 = game.validate_move(move1)
+    if validate_move1 != 'No Valid'
+      update_game_board = game.update_board(validate_move1, 'O')
+      puts 'Succesfull'
+    else
+      puts 'invalid input'
+    end
+    break if update_game_board == true
+  end
 end
 
-#get the input
-#check the validaity of input => pass the input in a method 
+# get the input
+# check the validaity of input => pass the input in a method
 # we will save the position and sign
 # we will update the board and display it
 # we will check the conditions
