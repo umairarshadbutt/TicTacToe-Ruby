@@ -16,13 +16,11 @@ player2 = Players.new(gets.chomp, 'X')
 # after entering the name we will assign the sign to player
 game.welcome_message(player2.name, player2.symbol)
 
-puts '-------------'
-puts '| a | b | c |'
-puts '-------------'
-puts '| d | e | f |'
-puts '-------------'
-puts '| g | h | i |'
-puts '-------------'
+
+game.game_board
+#get the input
+#check the validaity of input => pass the input in a method 
+
 
 puts "It is your move #{player1}, Select the position"
 # we will save the position and sign
