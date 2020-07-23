@@ -6,9 +6,9 @@
 ```ruby
 Welcome to Tic Tac Toe
 Please Enter Your Name(First Player): 
-You are  welcome #{name}, Your symbol is X
+You are  welcome #{name1}, Your symbol is X
 Please Enter Your Name(Second Player):
-You are  welcome #{name}, Your symbol is O
+You are  welcome #{name2}, Your symbol is O
 -------------
 | a | b | c |
 -------------
@@ -25,18 +25,33 @@ You are  welcome #{name}, Your symbol is O
 | X | h | X |
 -------------
 
-player #{name} is the winner!
+player #{name1} is the winner!
 Do you want to rematch(y/n)?
 yes
 ```
+## Game Rules
+- The game is rule based. Each player is going to choose a position out of 9 positions
+- You have to type fisrt player name and press enter
+- Then type the second player name and press enter
+- To choose a position you have to type the corresponding charachter and press enter
+- The game will check if the chosen position is valid or not
+- If it's not valid (i.e already taken or not of the availabe positions) it will ask for another input
+- If it's valid it will display the board with the chosen position replaced by the player's symbol
+- Then it will be the next player's turn 
+- Previous steps will repeate for the second player
+- Turns will take places one after another till it reaches either winning or draw condition
+
+### Winning conditions
+- To have occupied a full row with same symbol (e.g X)
+- To have occupied a column with same symbol (e.g X)
+- To have occupied a full diagonal with same symbol (e.g X)
+
+### Draw condition
+- If none of the winning conditions was achieved then the game is a draw
 
 ## Built With
 
 - Ruby
-
-## Live Demo
-
-To demo the project, visit [Live Demo](https://repl.it/@umairarshad/Enumerable-Methods#README.md)
 
 
 ## Getting Started
