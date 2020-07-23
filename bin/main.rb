@@ -26,6 +26,7 @@ while test == false
     break if update_game_board == true
   end
   break if game.winning?
+
   loop do
     game.game_board
     puts "It is your move #{player2.name}, Select the position"

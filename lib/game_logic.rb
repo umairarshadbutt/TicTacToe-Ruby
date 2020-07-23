@@ -1,3 +1,7 @@
+# rubocop:disable Metrics/CyclomaticComplexity
+# rubocop:disable Metrics/PerceivedComplexity
+# rubocop:disable Metrics/AbcSize
+
 class GameLogic
   attr_accessor :array
 
@@ -43,7 +47,8 @@ class GameLogic
     return true if @array[2] == @array[5] && @array[5] == @array[8]
     return true if @array[0] == @array[4] && @array[4] == @array[8]
     return true if @array[2] == @array[4] && @array[4] == @array[6]
-    return false
+
+    false
   end
 
   def winner(player1, player2)
@@ -55,7 +60,7 @@ class GameLogic
     return player1.name if @array[2] == @array[5] && @array[5] == @array[8] && array[2] == player1.symbol
     return player1.name if @array[0] == @array[4] && @array[4] == @array[8] && array[0] == player1.symbol
     return player1.name if @array[2] == @array[4] && @array[4] == @array[6] && array[2] == player1.symbol
-    
+
     return player2.name if @array[6] == @array[7] && @array[7] == @array[8] && array[6] == player2.symbol
     return player2.name if @array[0] == @array[1] && @array[1] == @array[2] && array[0] == player2.symbol
     return player2.name if @array[3] == @array[4] && @array[4] == @array[5] && array[3] == player2.symbol
@@ -65,5 +70,8 @@ class GameLogic
     return player2.name if @array[0] == @array[4] && @array[4] == @array[8] && array[0] == player2.symbol
     return player2.name if @array[2] == @array[4] && @array[4] == @array[6] && array[2] == player2.symbol
   end
-
 end
+
+# rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Metrics/PerceivedComplexity
+# rubocop:enable Metrics/AbcSize
