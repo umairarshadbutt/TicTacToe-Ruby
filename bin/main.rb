@@ -52,7 +52,6 @@ while rematch == true
   end
   puts 'do you want to rematch(y/n)? '
 
-  # proceed depending on the user input either to terminate the game or rematch
   rematch = gets.chomp
   if rematch.casecmp('YES').zero?
     rematch = true
