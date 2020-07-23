@@ -18,16 +18,23 @@ game.welcome_message(player2.name, player2.symbol)
 
 
 game.game_board
+
+
+puts "It is your move #{player1.name}, Select the position"
+move = gets.chomp
+if game.validate_move(move) != "No Valid"
+    puts "seccessful"
+else
+    puts "invalid input"
+end
+
 #get the input
 #check the validaity of input => pass the input in a method 
-
-
-puts "It is your move #{player1}, Select the position"
 # we will save the position and sign
 # we will update the board and display it
 # we will check the conditions
 
-puts "It is your move #{player2}, Select the position"
+puts "It is your move #{player2.name}, Select the position"
 # we will save the position and sign
 # we will update the board and display it
 # we will check the conditions

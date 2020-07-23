@@ -5,6 +5,11 @@ class GameLogic
     @array = array
   end
 
+  def validate_move(move)
+    @arrays_key = { 'a' => 0, 'b' => 1, 'c' => 2, 'd' => 3, 'e' => 4, 'f' => 5, 'g' => 6, 'h' => 7, 'i' => 8 }
+    @arrays_key.has_key?(move)? @arrays_key[move] : 'No Valid'
+  end
+
   def welcome_message(name, symbol)
     puts "You are  welcome #{name}, Your symbol is #{symbol}"
   end
