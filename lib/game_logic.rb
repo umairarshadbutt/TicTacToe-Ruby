@@ -33,4 +33,37 @@ class GameLogic
       false
     end
   end
+
+  def winning?
+    return true if @array[0] == @array[1] && @array[1] == @array[2]
+    return true if @array[3] == @array[4] && @array[4] == @array[5]
+    return true if @array[6] == @array[7] && @array[7] == @array[8]
+    return true if @array[0] == @array[3] && @array[3] == @array[6]
+    return true if @array[1] == @array[4] && @array[4] == @array[7]
+    return true if @array[2] == @array[5] && @array[5] == @array[8]
+    return true if @array[0] == @array[4] && @array[4] == @array[8]
+    return true if @array[2] == @array[4] && @array[4] == @array[6]
+    return false
+  end
+
+  def winner(player1, player2)
+    return player1.name if @array[0] == @array[1] && @array[1] == @array[2] && array[0] == player1.symbol
+    return player1.name if @array[6] == @array[7] && @array[7] == @array[8] && array[6] == player1.symbol
+    return player1.name if @array[3] == @array[4] && @array[4] == @array[5] && array[3] == player1.symbol
+    return player1.name if @array[0] == @array[3] && @array[3] == @array[6] && array[0] == player1.symbol
+    return player1.name if @array[1] == @array[4] && @array[4] == @array[7] && array[1] == player1.symbol
+    return player1.name if @array[2] == @array[5] && @array[5] == @array[8] && array[2] == player1.symbol
+    return player1.name if @array[0] == @array[4] && @array[4] == @array[8] && array[0] == player1.symbol
+    return player1.name if @array[2] == @array[4] && @array[4] == @array[6] && array[2] == player1.symbol
+    
+    return player2.name if @array[6] == @array[7] && @array[7] == @array[8] && array[6] == player2.symbol
+    return player2.name if @array[0] == @array[1] && @array[1] == @array[2] && array[0] == player2.symbol
+    return player2.name if @array[3] == @array[4] && @array[4] == @array[5] && array[3] == player2.symbol
+    return player2.name if @array[0] == @array[3] && @array[3] == @array[6] && array[0] == player2.symbol
+    return player2.name if @array[1] == @array[4] && @array[4] == @array[7] && array[1] == player2.symbol
+    return player2.name if @array[2] == @array[5] && @array[5] == @array[8] && array[2] == player2.symbol
+    return player2.name if @array[0] == @array[4] && @array[4] == @array[8] && array[0] == player2.symbol
+    return player2.name if @array[2] == @array[4] && @array[4] == @array[6] && array[2] == player2.symbol
+  end
+
 end

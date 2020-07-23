@@ -25,7 +25,7 @@ while test == false
     end
     break if update_game_board == true
   end
-  break if test == true
+  break if game.winning?
   loop do
     game.game_board
     puts "It is your move #{player2.name}, Select the position"
@@ -39,9 +39,11 @@ while test == false
     end
     break if update_game_board == true
   end
+  break if game.winning?
 end
 
-puts "player 'e.g player1' is the winner! or the game is draw"
+game.game_board
+puts "player #{game.winner(player1, player2)} is the winner! or the game is draw"
 puts 'do you want to rematch(y/n)? '
 rematch = gets.chomp
 puts rematch
