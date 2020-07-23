@@ -45,7 +45,7 @@ while rematch == true
   end
 
   game.game_board
-  if game.winning?
+  if game.winning? && game.winning? != 'draw'
     puts "player #{game.winner(player1, player2)} is the winner!"
   else
     puts 'The game is draw'
