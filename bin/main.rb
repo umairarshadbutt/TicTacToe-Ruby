@@ -1,16 +1,20 @@
 #!/usr/bin/env ruby
+require_relative '../lib/players.rb'
+require_relative '../lib/game_logic.rb'
 
+game = GameLogic.new
 puts 'Welcome to Tic Tac Toe'
 puts 'Please Enter Your Name(First Player): '
-player1 = gets.chomp
+player1 = Players.new(gets.chomp, 'X')
 # save the name in player1 variable
 # after entering the name we will agign the sign to player
-puts "#{player1} your symbol is X "
+game.welcome_message(player1.name, player1.symbol)
+# puts "#{player1} your symbol is X "
 puts 'Please Enter Your Name(Second Player): '
-player2 = gets.chomp
+player2 = Players.new(gets.chomp, 'X')
 # save the name in player2 variable
 # after entering the name we will assign the sign to player
-puts "#{player2} your symbol is O "
+game.welcome_message(player2.name, player2.symbol)
 
 puts '-------------'
 puts '| a | b | c |'
