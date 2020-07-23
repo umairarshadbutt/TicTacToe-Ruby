@@ -10,8 +10,8 @@ game.welcome_message(player1.name, player1.symbol)
 puts 'Please Enter Your Name(Second Player): '
 player2 = Players.new(gets.chomp, 'O')
 game.welcome_message(player2.name, player2.symbol)
-test = false
-while test == false
+
+while game.winning? == false
   loop do
     game.game_board
     puts "It is your move #{player1.name}, Select the position"
@@ -40,11 +40,14 @@ while test == false
     end
     break if update_game_board == true
   end
-  break if game.winning?
 end
 
 game.game_board
-puts "player #{game.winner(player1, player2)} is the winner! or the game is draw"
+if game.winning?
+  puts "player #{game.winner(player1, player2)} is the winner!"
+else
+  puts 'The game is draw'
+end
 puts 'do you want to rematch(y/n)? '
 rematch = gets.chomp
 puts rematch
