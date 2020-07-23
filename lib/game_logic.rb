@@ -47,7 +47,7 @@ class GameLogic
     return true if @array[2] == @array[5] && @array[5] == @array[8]
     return true if @array[0] == @array[4] && @array[4] == @array[8]
     return true if @array[2] == @array[4] && @array[4] == @array[6]
-    return false if @array.none? { |position| %w[a b c d e f g h i].any?(position) }
+    return 'draw' if @array.none? { |position| %w[a b c d e f g h i].any?(position) }
 
     false
   end
