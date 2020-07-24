@@ -1,7 +1,3 @@
-# rubocop:disable Metrics/CyclomaticComplexity
-# rubocop:disable Metrics/PerceivedComplexity
-# rubocop:disable Metrics/AbcSize
-
 class GameLogic
   attr_accessor :array
 
@@ -23,7 +19,6 @@ class GameLogic
     end
   end
 
-  
   def winning?
     @win_cases = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
     @win_cases.length.times do |element|
@@ -37,26 +32,9 @@ class GameLogic
   end
 
   def winner(player1, player2)
-    return player1.name if @array[0] == @array[1] && @array[1] == @array[2] && array[0] == player1.symbol
-    return player1.name if @array[6] == @array[7] && @array[7] == @array[8] && array[6] == player1.symbol
-    return player1.name if @array[3] == @array[4] && @array[4] == @array[5] && array[3] == player1.symbol
-    return player1.name if @array[0] == @array[3] && @array[3] == @array[6] && array[0] == player1.symbol
-    return player1.name if @array[1] == @array[4] && @array[4] == @array[7] && array[1] == player1.symbol
-    return player1.name if @array[2] == @array[5] && @array[5] == @array[8] && array[2] == player1.symbol
-    return player1.name if @array[0] == @array[4] && @array[4] == @array[8] && array[0] == player1.symbol
-    return player1.name if @array[2] == @array[4] && @array[4] == @array[6] && array[2] == player1.symbol
-
-    return player2.name if @array[6] == @array[7] && @array[7] == @array[8] && array[6] == player2.symbol
-    return player2.name if @array[0] == @array[1] && @array[1] == @array[2] && array[0] == player2.symbol
-    return player2.name if @array[3] == @array[4] && @array[4] == @array[5] && array[3] == player2.symbol
-    return player2.name if @array[0] == @array[3] && @array[3] == @array[6] && array[0] == player2.symbol
-    return player2.name if @array[1] == @array[4] && @array[4] == @array[7] && array[1] == player2.symbol
-    return player2.name if @array[2] == @array[5] && @array[5] == @array[8] && array[2] == player2.symbol
-    return player2.name if @array[0] == @array[4] && @array[4] == @array[8] && array[0] == player2.symbol
-    return player2.name if @array[2] == @array[4] && @array[4] == @array[6] && array[2] == player2.symbol
+    @players = [player1, player2]
+    @players.each do |player|
+      return player.name if @win_cases.any? { |item| item.all? { |position| @array[position] == player.symbol } }
+    end
   end
 end
-
-# rubocop:enable Metrics/CyclomaticComplexity
-# rubocop:enable Metrics/PerceivedComplexity
-# rubocop:enable Metrics/AbcSize
