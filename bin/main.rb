@@ -37,7 +37,7 @@ while rematch == true
         validate_move = game.validate_move(move)
         if validate_move != 'No Valid'
           update_game_board = game.update_board(validate_move, player.symbol)
-          puts validate_move
+          puts 'Succesfull'
         else
           puts 'invalid input'
         end
