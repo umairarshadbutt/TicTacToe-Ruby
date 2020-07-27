@@ -8,6 +8,15 @@ describe 'Tictactoe' do
 
   # game.array = %w[a b c d e f g h i]
 
+  describe 'validate move' do
+    it 'Validates if the place exists and if it is not taken already' do
+      expect(game.validate_move('a')).to eql(0)
+    end
+    it 'Validates if the place exists and if it is not taken already' do
+      expect(game.validate_move('b')).to eql(1)
+    end
+  end
+
   describe 'update_board' do
     it 'Assigns the X to board position a' do
       expect(game.update_board(0, 'X')).to eql(true)
