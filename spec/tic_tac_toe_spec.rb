@@ -1,13 +1,22 @@
 require_relative '../lib/game_logic.rb'
 require_relative '../lib/players.rb'
 
-describe Tictactoe do
+describe 'Tictactoe' do
   game = GameLogic.new
-  game.array = %w[a b c d e f g h i]
+  # player1 = Players.new("Elias", 'X')
+  # player2 = Players.new("Umair", 'O')
+
+  # game.array = %w[a b c d e f g h i]
 
   describe 'update_board' do
-    it 'Assign the X to boar' do
-      expect(game.update_board('a', 'X')).to eql(true)
+    it 'Assigns the X to board position a' do
+      expect(game.update_board(0, 'X')).to eql(true)
+    end
+    it 'Assigns the X to board position b' do
+      expect(game.update_board(1, 'X')).to eql(true)
+    end
+    it 'Assigns the X to board position c' do
+      expect(game.update_board(2, 'X')).to eql(true)
     end
   end
 end
