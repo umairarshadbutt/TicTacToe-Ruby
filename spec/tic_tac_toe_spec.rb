@@ -3,8 +3,8 @@ require_relative '../lib/players.rb'
 
 describe 'Tictactoe' do
   game = GameLogic.new
-  # player1 = Players.new("Elias", 'X')
-  # player2 = Players.new("Umair", 'O')
+  player1 = Players.new('Elias', 'X')
+  player2 = Players.new('Umair', 'O')
 
   # game.array = %w[a b c d e f g h i]
 
@@ -32,6 +32,12 @@ describe 'Tictactoe' do
   describe 'winning?' do
     it 'Game wining condition is true' do
       expect(game.winning?).to eql(true)
+    end
+  end
+
+  describe 'winner' do
+    it 'Elias is winner' do
+      expect(game.winner(player1, player2)).to eql('Elias')
     end
   end
 end
