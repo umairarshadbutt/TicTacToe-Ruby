@@ -19,4 +19,10 @@ describe 'Tictactoe' do
       expect(game.update_board(2, 'X')).to eql(true)
     end
   end
+
+  describe 'winning?' do
+    it 'Game wining condition is true' do
+      expect(game.winning?).to eql(true)
+    end
+  end
 end
