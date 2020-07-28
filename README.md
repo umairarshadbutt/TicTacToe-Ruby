@@ -85,6 +85,12 @@ To get a local copy up and running follow these simple example steps.
 - Install [Ruby](https://ruby-doc.org/downloads/)
 - Run `ruby main.rb`
 
+
+#### Testing
+- Install `gem install rspec`
+- Initialize `rspec --init`
+- Run `rspec`
+
 To make any change,
 
 - Open related file by using text editor.
