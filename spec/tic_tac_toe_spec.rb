@@ -39,7 +39,7 @@ describe 'Tictactoe' do
       expect(game.update_board(3, 'O')).to eql(true)
     end
     it 'Assigns the 0 to board position b' do
-      expect(game.update_board(4, 'O')).to eql(true)
+      expect(game.update_board(4, 'X')).to eql(true)
     end
     it 'Assigns the 0 to board position c' do
       expect(game.update_board(5, 'O')).to eql(true)
